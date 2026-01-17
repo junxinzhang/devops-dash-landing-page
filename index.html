@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="zh-CN" itemscope itemtype="https://schema.org/WebPage">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Primary Meta Tags -->
+  <title>DevOps Dashboard | 企业级CI/CD可视化监控平台 | DevOps Visualization</title>
+  <meta name="title" content="DevOps Dashboard | 企业级CI/CD可视化监控平台" />
+  <meta name="description" content="专业的DevOps可视化监控平台：实时构建状态追踪、代码质量分析、部署监控、团队协作看板。支持AWS CodeBuild/CodeDeploy集成，企业级大屏展示方案。" />
+  <meta name="keywords" content="DevOps Dashboard, CI/CD监控, 构建可视化, Build Monitor, 代码质量, Code Quality, 部署监控, Deployment Tracking, AWS CodeBuild, CodeDeploy, 大屏展示, Dashboard, 团队协作, Team Collaboration" />
+  <meta name="author" content="DevOps Team" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="DevOps可视化监控平台" />
+  <meta name="abstract" content="提供CI/CD流水线的实时监控与可视化，包括构建状态、代码质量、部署追踪等企业级功能。" />
+  <meta name="classification" content="Technology, Software Development, DevOps" />
+  <meta name="category" content="DevOps, CI/CD, 监控平台, 可视化" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://devops-dash.junxinzhang.com/" />
+  <link rel="alternate" hreflang="zh-CN" href="https://devops-dash.junxinzhang.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://devops-dash.junxinzhang.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://devops-dash.junxinzhang.com/" />
+  <meta property="og:site_name" content="DevOps Dashboard" />
+  <meta property="og:title" content="DevOps Dashboard | 企业级CI/CD可视化监控平台" />
+  <meta property="og:description" content="专业的DevOps可视化监控平台：实时构建状态追踪、代码质量分析、部署监控、团队协作看板。" />
+  <meta property="og:image" content="https://devops-dash.junxinzhang.com/assets/screenshot.png" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DevOps Dashboard | CI/CD可视化监控" />
+  <meta name="twitter:description" content="专业DevOps监控：实时构建状态、代码质量分析、部署追踪、大屏展示。" />
+  <meta name="twitter:image" content="https://devops-dash.junxinzhang.com/assets/screenshot.png" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" as="style" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B7D8DB18B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8B7D8DB18B');
+  </script>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?df4875a395e53ae5bd6d36193389e5c0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="f7ff8132-5732-44d7-8f4c-80b82bdb1771"></script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://devops-dash.junxinzhang.com/#website",
+        "url": "https://devops-dash.junxinzhang.com/",
+        "name": "DevOps Dashboard",
+        "alternateName": "DevOps可视化监控平台",
+        "description": "专业的DevOps CI/CD可视化监控平台，提供实时构建状态追踪、代码质量分析、部署监控功能",
+        "inLanguage": ["zh-CN", "en"]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://devops-dash.junxinzhang.com/#software",
+        "name": "DevOps Dashboard",
+        "alternateName": "DevOps可视化监控平台",
+        "description": "企业级CI/CD可视化监控平台，提供实时构建状态追踪、代码质量分析、部署监控、团队协作看板功能",
+        "applicationCategory": "BusinessApplication",
+        "applicationSubCategory": "DevOps Monitoring",
+        "operatingSystem": "Web",
+        "featureList": [
+          "实时构建状态监控 - 追踪每次CI/CD构建的实时状态与进度",
+          "代码质量分析 - 集成SonarQube等工具的质量指标展示",
+          "部署追踪 - 记录每次部署的详细信息与历史",
+          "大屏展示 - 支持TV大屏适配的可视化看板",
+          "AWS集成 - 原生支持CodeBuild、CodeDeploy等AWS服务",
+          "团队协作 - 多项目多团队的统一视图"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "CNY",
+          "availability": "https://schema.org/InStock"
+        },
+        "keywords": ["DevOps", "CI/CD", "Dashboard", "监控", "构建", "部署", "可视化"],
+        "programmingLanguage": ["JavaScript", "React", "Node.js"]
+      }
+    ]
+  }
+  </script>
+
+  <!-- FAQ Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "DevOps Dashboard支持哪些CI/CD工具？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "目前原生支持AWS CodeBuild和CodeDeploy，同时可通过API对接Jenkins、GitLab CI、GitHub Actions等主流CI/CD工具。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "是否支持大屏展示模式？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "支持。Dashboard专为大屏展示设计，支持自动适配不同分辨率，提供实时刷新的可视化看板。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "如何集成代码质量分析？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "通过API对接SonarQube等代码质量分析工具，实时展示代码覆盖率、Bug数量、代码异味等质量指标。"
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="antialiased">
+<a href="#main" class="skip-link">跳转到主要内容</a>
+
+<!-- GEO Optimization: AI-Friendly Content Summary -->
+<div class="sr-only" role="region" aria-label="页面摘要" itemscope itemtype="https://schema.org/WebPageElement">
+  <h1 itemprop="name">DevOps Dashboard - CI/CD可视化监控平台</h1>
+
+  <section aria-label="概述">
+    <h2>项目概述 | Project Overview</h2>
+    <p itemprop="description">
+      DevOps Dashboard是一套面向企业级场景的CI/CD可视化监控平台。
+      提供实时构建状态追踪、代码质量分析、部署监控、团队协作看板等功能，
+      帮助团队实时掌握软件交付的每个环节。
+    </p>
+  </section>
+
+  <section aria-label="核心功能">
+    <h2>核心功能 | Core Features</h2>
+    <ul>
+      <li><strong>实时构建监控 (Real-time Build Monitoring)</strong>:
+        追踪每次CI/CD构建的实时状态与进度，支持多项目并行监控。</li>
+      <li><strong>代码质量分析 (Code Quality Analysis)</strong>:
+        集成SonarQube等工具，展示代码覆盖率、Bug数量等质量指标。</li>
+      <li><strong>部署追踪 (Deployment Tracking)</strong>:
+        记录每次部署的详细信息，包括时间、状态、环境等。</li>
+      <li><strong>大屏展示 (Big Screen Display)</strong>:
+        支持TV大屏适配，自动缩放，实时刷新的可视化看板。</li>
+    </ul>
+  </section>
+
+  <section aria-label="技术栈">
+    <h2>技术栈 | Technology Stack</h2>
+    <ul>
+      <li>前端 (Frontend): React 18, Vite, ECharts</li>
+      <li>状态管理 (State): Redux Toolkit</li>
+      <li>样式 (Styling): SCSS, Tailwind CSS</li>
+      <li>UI组件 (UI): Ant Design</li>
+      <li>部署 (Deployment): AWS CodeBuild, CodeDeploy</li>
+    </ul>
+  </section>
+</div>
+
+<header class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10">
+        <i class="ri-dashboard-3-line text-2xl text-emerald-400"></i>
+      </div>
+      <div class="text-xl font-bold text-white brand-title">DevOps Dashboard</div>
+    </div>
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" role="navigation" aria-label="主导航">
+      <a href="#pain" class="hover:text-emerald-300 transition">痛点</a>
+      <a href="#features" class="hover:text-emerald-300 transition">功能</a>
+      <a href="#architecture" class="hover:text-emerald-300 transition">技术</a>
+      <a href="https://devops-dash.junxinzhang.com" class="hover:text-emerald-300 transition">演示</a>
+      <a href="#faq" class="hover:text-emerald-300 transition">FAQ</a>
+      <a href="#contact" class="px-4 py-2 border border-emerald-400 text-emerald-300 rounded-md hover:bg-emerald-500/10 transition">开始使用</a>
+    </nav>
+
+    <button id="menu-btn" class="mobile-menu-btn md:hidden" aria-label="打开导航菜单" aria-expanded="false">
+      <i class="ri-menu-line text-xl text-white"></i>
+    </button>
+
+    <div id="mobile-nav" class="mobile-nav md:hidden text-slate-300 text-sm" role="navigation" aria-label="移动端导航">
+      <a href="#pain">痛点</a>
+      <a href="#features">功能</a>
+      <a href="#architecture">技术</a>
+      <a href="https://devops-dash.junxinzhang.com">演示</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="text-emerald-300 font-medium">开始使用</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero Section -->
+  <section class="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right" class="order-2 lg:order-1">
+        <div class="badge inline-block animate-slide-in">实时监控 · 一目了然</div>
+        <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold hero-gradient leading-tight">
+          让CI/CD流水线透明可视
+        </h1>
+        <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
+          企业级DevOps可视化监控平台：实时构建状态追踪、代码质量分析、部署监控、大屏展示，让团队实时掌握软件交付的每个环节。
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
+          <a href="#demo"
+             class="px-6 py-3 rounded-md bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition text-center">
+             查看在线演示
+          </a>
+          <a href="https://github.com/junxinzhang/devops-dash-landing-page" target="_blank" rel="noopener"
+             class="px-6 py-3 rounded-md border border-slate-600 text-slate-200 hover:bg-slate-700/50 transition flex items-center gap-2 justify-center">
+             <i class="ri-github-line"></i> 查看源码
+          </a>
+        </div>
+
+        <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-emerald-300">实时监控</div>
+            <div class="text-xs text-slate-400 mt-1">构建状态</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-amber-400">质量分析</div>
+            <div class="text-xs text-slate-400 mt-1">代码指标</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-emerald-300">部署追踪</div>
+            <div class="text-xs text-slate-400 mt-1">发布记录</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-2xl font-bold text-amber-400">大屏适配</div>
+            <div class="text-xs text-slate-400 mt-1">TV展示</div>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-left" class="order-1 lg:order-2">
+        <div class="relative">
+          <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 via-amber-400/20 to-cyan-400/20 rounded-2xl blur-xl"></div>
+          <div class="hero-orbit"></div>
+
+          <div class="screenshot-carousel relative">
+            <div class="carousel-wrapper">
+              <img src="assets/screenshot.png"
+                   alt="DevOps Dashboard界面截图 - 构建监控"
+                   width="900"
+                   height="600"
+                   loading="eager"
+                   fetchpriority="high"
+                   class="carousel-image active relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto"
+                   itemprop="image">
+              <img src="assets/screenshot01.png"
+                   alt="DevOps Dashboard界面截图 - 质量分析"
+                   width="900"
+                   height="600"
+                   loading="eager"
+                   class="carousel-image relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto">
+            </div>
+
+            <button class="carousel-btn carousel-prev" aria-label="上一张截图">
+              <i class="ri-arrow-left-s-line"></i>
+            </button>
+            <button class="carousel-btn carousel-next" aria-label="下一张截图">
+              <i class="ri-arrow-right-s-line"></i>
+            </button>
+
+            <div class="carousel-indicators">
+              <button class="carousel-indicator active" aria-label="截图 1"></button>
+              <button class="carousel-indicator" aria-label="截图 2"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points Section -->
+  <section id="pain" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center">你可能正在遇到这些问题</h2>
+    <p class="text-slate-600 text-center mt-4 max-w-2xl mx-auto">DevOps团队在日常工作中常见的监控与协作痛点。</p>
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-amber-50">
+          <i class="ri-eye-off-line text-2xl text-amber-500"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">构建状态不透明</h3>
+          <p class="mt-2 text-slate-600 text-sm">需要登录多个系统查看构建状态，无法快速了解整体进度。</p>
+        </div>
+      </div>
+      <div class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-emerald-50">
+          <i class="ri-bug-line text-2xl text-emerald-600"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">质量指标分散</h3>
+          <p class="mt-2 text-slate-600 text-sm">代码质量数据散落在不同工具中，难以统一查看和对比。</p>
+        </div>
+      </div>
+      <div class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-rose-50">
+          <i class="ri-team-line text-2xl text-rose-500"></i>
+        </div>
+        <div>
+          <h3 class="font-medium text-slate-900">团队协作不便</h3>
+          <p class="mt-2 text-slate-600 text-sm">缺少统一的可视化看板，团队成员无法快速同步项目状态。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="max-w-7xl mx-auto px-6 py-16 bg-sand-50 rounded-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">核心功能</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">一站式DevOps可视化监控解决方案。</p>
+    <div class="grid lg:grid-cols-2 gap-8">
+      <div class="space-y-6">
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-emerald-50">
+            <i class="ri-pulse-line text-2xl text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">实时构建监控</h3>
+            <p class="mt-2 text-slate-600 text-sm">追踪每次CI/CD构建的实时状态，支持多项目并行监控，自动刷新数据。</p>
+          </div>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-amber-50">
+            <i class="ri-bar-chart-box-line text-2xl text-amber-500"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">代码质量分析</h3>
+            <p class="mt-2 text-slate-600 text-sm">集成SonarQube等工具，展示代码覆盖率、Bug数量、代码异味等关键指标。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-cyan-50">
+            <i class="ri-rocket-2-line text-2xl text-cyan-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">部署追踪</h3>
+            <p class="mt-2 text-slate-600 text-sm">记录每次部署的详细信息，包括时间、状态、环境、版本等完整历史。</p>
+          </div>
+        </div>
+        <div class="card flex items-start gap-4">
+          <div class="icon-box bg-slate-100">
+            <i class="ri-tv-2-line text-2xl text-slate-600"></i>
+          </div>
+          <div>
+            <h3 class="font-medium text-slate-900">大屏展示</h3>
+            <p class="mt-2 text-slate-600 text-sm">支持TV大屏适配，自动缩放布局，实时刷新数据，适合团队区域展示。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Section -->
+  <section id="architecture" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">技术架构</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">现代化前端技术栈，云原生部署方案。</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="arch-card">
+        <div class="arch-step">1</div>
+        <h4 class="font-medium text-slate-900 mt-4">React + Vite</h4>
+        <p class="mt-2 text-slate-600 text-sm">基于React 18构建，Vite快速开发体验，现代化组件架构。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-reactjs-line"></i>
+          <span>组件化开发</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-step">2</div>
+        <h4 class="font-medium text-slate-900 mt-4">ECharts可视化</h4>
+        <p class="mt-2 text-slate-600 text-sm">强大的数据可视化能力，支持各类图表与实时更新。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-line-chart-line"></i>
+          <span>丰富图表</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-step">3</div>
+        <h4 class="font-medium text-slate-900 mt-4">Redux状态管理</h4>
+        <p class="mt-2 text-slate-600 text-sm">Redux Toolkit管理全局状态，数据流清晰可控。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-database-2-line"></i>
+          <span>状态集中</span>
+        </div>
+      </div>
+      <div class="arch-card">
+        <div class="arch-step">4</div>
+        <h4 class="font-medium text-slate-900 mt-4">AWS部署</h4>
+        <p class="mt-2 text-slate-600 text-sm">CodeBuild + CodeDeploy自动化部署，云原生架构。</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
+          <i class="ri-cloud-line"></i>
+          <span>自动化CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section id="demo" class="max-w-7xl mx-auto px-6 py-16 bg-sand-50 rounded-2xl" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">快速体验</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">多种方式快速了解DevOps Dashboard。</p>
+
+    <!-- Screenshot Preview -->
+    <div class="mb-12">
+      <div class="relative max-w-4xl mx-auto">
+        <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 via-amber-400/20 to-cyan-400/20 rounded-2xl blur-xl"></div>
+        <img src="assets/screenshot.png"
+             alt="DevOps Dashboard 界面预览"
+             class="relative rounded-xl shadow-2xl border border-slate-200 w-full"
+             loading="lazy" />
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-play-circle-line text-3xl text-emerald-500"></i>
+          <span class="text-slate-700 font-medium">在线演示</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">直接访问线上Demo，体验完整功能。</p>
+        <a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition">
+          <i class="ri-external-link-line"></i> 访问Demo
+        </a>
+      </div>
+      <div class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-git-repository-line text-3xl text-amber-500"></i>
+          <span class="text-slate-700 font-medium">源码仓库</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">查看完整源代码，了解实现细节。</p>
+        <a href="https://github.com/junxinzhang/devops-dash-landing-page" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition">
+          <i class="ri-code-s-slash-line"></i> 查看源码
+        </a>
+      </div>
+      <div class="demo-card">
+        <div class="flex items-center gap-3 mb-4">
+          <i class="ri-book-open-line text-3xl text-slate-800"></i>
+          <span class="text-slate-700 font-medium">使用文档</span>
+        </div>
+        <p class="text-slate-600 text-sm mb-4">完整的部署和使用文档指南。</p>
+        <a href="#contact"
+           class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition">
+          <i class="ri-file-text-line"></i> 查看文档
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-12 grid lg:grid-cols-3 gap-6">
+      <div class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-slate-700 font-medium">实时更新</span>
+        </div>
+        <p class="text-slate-600 text-sm">数据每5分钟自动刷新，保持最新状态。</p>
+      </div>
+      <div class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="ri-fullscreen-line text-xl text-amber-500"></i>
+          <span class="text-slate-700 font-medium">自适应布局</span>
+        </div>
+        <p class="text-slate-600 text-sm">支持各种屏幕尺寸，从手机到大屏TV。</p>
+      </div>
+      <div class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3">
+          <i class="ri-lock-line text-xl text-emerald-500"></i>
+          <span class="text-slate-700 font-medium">安全认证</span>
+        </div>
+        <p class="text-slate-600 text-sm">集成Authing认证，支持企业SSO登录。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-10">技术栈</h2>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="tech-badge">
+        <i class="ri-reactjs-line text-cyan-600"></i>
+        <span>React 18</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-flashlight-line text-amber-600"></i>
+        <span>Vite</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-database-2-line text-emerald-600"></i>
+        <span>Redux Toolkit</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-line-chart-line text-slate-700"></i>
+        <span>ECharts</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-layout-3-line text-cyan-500"></i>
+        <span>Ant Design</span>
+      </div>
+      <div class="tech-badge">
+        <i class="ri-cloud-line text-amber-500"></i>
+        <span>AWS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up" itemscope itemtype="https://schema.org/FAQPage">
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">常见问题</h2>
+    <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">关于DevOps Dashboard的常见问题解答。</p>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">支持哪些CI/CD工具？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            目前原生支持AWS CodeBuild和CodeDeploy，同时可通过API对接Jenkins、GitLab CI、GitHub Actions等主流CI/CD工具。
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">是否支持大屏展示？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            支持。Dashboard使用autofit.js专为大屏展示设计，支持自动适配不同分辨率，提供实时刷新的可视化看板。
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">数据刷新频率是多少？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            默认每5分钟自动刷新一次数据，确保展示的信息始终是最新状态。刷新频率可根据需求进行配置调整。
+          </div>
+        </div>
+      </details>
+
+      <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
+          <span itemprop="name" class="font-medium text-slate-900">如何部署？</span>
+          <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
+        </summary>
+        <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
+            项目使用Vite构建，支持AWS CodeBuild + CodeDeploy自动化部署，也可以部署到任何支持静态站点的平台如Nginx、S3等。
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-emerald-600 to-cyan-500 rounded-2xl text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-semibold text-white mb-6">开始使用 DevOps Dashboard</h2>
+    <p class="text-emerald-50 mb-8 max-w-xl mx-auto">立即体验企业级CI/CD可视化监控平台，提升团队协作效率。</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="mailto:jason2023zhang@gmail.com"
+         class="px-8 py-4 bg-white text-emerald-600 rounded-md text-lg shadow-lg hover:bg-slate-50 transition inline-flex items-center justify-center gap-2">
+        <i class="ri-mail-line"></i> 邮件咨询
+      </a>
+      <a href="https://junxinzhang.com" target="_blank" rel="noopener"
+         class="px-8 py-4 border-2 border-white text-white rounded-md text-lg hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
+        <i class="ri-earth-line"></i> 访问博客
+      </a>
+    </div>
+    <div class="mt-6 text-sm text-emerald-50/90">微信：winnielove2020</div>
+  </section>
+</main>
+
+<footer class="bg-slate-900 mt-16">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-slate-400">
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="flex gap-1">
+          <span class="w-3 h-3 rounded-sm bg-emerald-400"></span>
+          <span class="w-3 h-3 rounded-sm bg-cyan-400"></span>
+        </div>
+        <span class="text-white font-semibold">DevOps Dashboard</span>
+      </div>
+      <p class="text-sm">企业级CI/CD可视化监控平台，让DevOps流程透明可视。</p>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">核心功能</h3>
+      <ul class="space-y-2 text-sm">
+        <li>实时构建监控</li>
+        <li>代码质量分析</li>
+        <li>部署追踪</li>
+        <li>大屏展示</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">资源入口</h3>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2">
+          <i class="ri-external-link-line text-emerald-300"></i>
+          <a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener" class="hover:text-emerald-300 transition">在线演示</a>
+        </li>
+        <li class="flex items-center gap-2">
+          <i class="ri-git-repository-line text-emerald-300"></i>
+          <a href="https://github.com/junxinzhang/devops-dash-landing-page" target="_blank" rel="noopener" class="hover:text-emerald-300 transition">源码仓库</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold text-white mb-4">关注我们</h3>
+      <div class="flex items-center gap-4 text-2xl mb-4">
+        <a href="https://github.com/junxinzhang" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="GitHub">
+          <i class="ri-github-fill"></i>
+        </a>
+        <a href="https://junxinzhang.com" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="博客">
+          <i class="ri-earth-line"></i>
+        </a>
+        <a href="mailto:jason2023zhang@gmail.com" class="hover:text-emerald-300 transition" title="邮箱">
+          <i class="ri-mail-line"></i>
+        </a>
+        <a href="https://x.com/Jasonz9788" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="Twitter/X">
+          <i class="ri-twitter-x-line"></i>
+        </a>
+        <div class="group relative">
+          <i class="ri-wechat-line hover:text-emerald-300 cursor-pointer" title="微信"></i>
+          <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-36 bg-white border border-gray-200 rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+            <img src="assets/JustJason_wechat-qrcode.jpg" alt="微信二维码" class="w-full h-auto rounded" />
+            <p class="text-xs text-center text-slate-600 mt-1">扫码添加微信</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500">欢迎联系交流技术</p>
+    </div>
+  </div>
+  <div class="text-center text-sm text-slate-600 py-4 border-t border-slate-800">
+    &copy; <span id="copyright-year">2025-2026</span> Jason Zhang. DevOps Dashboard.
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+# DevOps Dashboard Landing Page
+# https://devops-dash.junxinzhang.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://devops-dash.junxinzhang.com/sitemap.xml
