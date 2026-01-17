@@ -5,16 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <!-- Primary Meta Tags -->
-  <title>DevOps Dashboard | Enterprise CI/CD Visualization Platform</title>
-  <meta name="title" content="DevOps Dashboard | Enterprise CI/CD Visualization Platform" />
-  <meta name="description" content="Professional DevOps visualization platform: real-time build tracking, code quality analysis, deployment monitoring, team collaboration dashboard. AWS CodeBuild/CodeDeploy integration." />
-  <meta name="keywords" content="DevOps Dashboard, CI/CD Monitoring, Build Visualization, Code Quality, Deployment Tracking, AWS CodeBuild, CodeDeploy, Dashboard, Team Collaboration" />
-  <meta name="author" content="DevOps Team" />
+  <title>DevOps Dashboard | Enterprise CI/CD Visualization & Monitoring Platform</title>
+  <meta name="title" content="DevOps Dashboard | Enterprise CI/CD Visualization & Monitoring Platform" />
+  <meta name="description" content="Professional DevOps visualization monitoring platform: Real-time build status tracking, code quality analysis, deployment monitoring, team collaboration dashboard. AWS CodeBuild/CodeDeploy integration ready." />
+  <meta name="keywords" content="DevOps Dashboard, CI/CD monitoring, Build visualization, Build Monitor, Code Quality, Deployment Tracking, AWS CodeBuild, CodeDeploy, Big Screen Display, Dashboard, Team Collaboration" />
+  <meta name="author" content="Jason Zhang" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0b1220" />
   <meta name="color-scheme" content="light dark" />
 
-  <!-- Canonical -->
+  <!-- Additional SEO Meta Tags -->
+  <meta name="subject" content="DevOps Visualization Monitoring Platform" />
+  <meta name="abstract" content="Real-time CI/CD pipeline monitoring and visualization, including build status, code quality, deployment tracking and enterprise features." />
+  <meta name="classification" content="Technology, Software Development, DevOps" />
+  <meta name="category" content="DevOps, CI/CD, Monitoring Platform, Visualization" />
+
+  <!-- Canonical & Alternate Languages -->
   <link rel="canonical" href="https://devops-dash.junxinzhang.com/en/" />
   <link rel="alternate" hreflang="zh-CN" href="https://devops-dash.junxinzhang.com/" />
   <link rel="alternate" hreflang="en" href="https://devops-dash.junxinzhang.com/en/" />
@@ -25,14 +31,15 @@
   <meta property="og:url" content="https://devops-dash.junxinzhang.com/en/" />
   <meta property="og:site_name" content="DevOps Dashboard" />
   <meta property="og:title" content="DevOps Dashboard | Enterprise CI/CD Visualization Platform" />
-  <meta property="og:description" content="Professional DevOps visualization platform: real-time build tracking, code quality analysis, deployment monitoring." />
+  <meta property="og:description" content="Professional DevOps visualization: Real-time build tracking, code quality analysis, deployment monitoring, team dashboard." />
   <meta property="og:image" content="https://devops-dash.junxinzhang.com/assets/screenshot.png" />
   <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="zh_CN" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DevOps Dashboard | CI/CD Visualization" />
-  <meta name="twitter:description" content="Professional DevOps monitoring: real-time builds, code quality, deployment tracking, big screen display." />
+  <meta name="twitter:description" content="Professional DevOps monitoring: Real-time build status, code quality analysis, deployment tracking, big screen display." />
   <meta name="twitter:image" content="https://devops-dash.junxinzhang.com/assets/screenshot.png" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon.png" />
@@ -46,6 +53,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+  <link rel="preload" href="../css/style.css" as="style" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
@@ -53,6 +63,31 @@
   <link rel="stylesheet" href="../css/style.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" defer></script>
+
+  <!-- Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8B7D8DB18B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8B7D8DB18B');
+  </script>
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?df4875a395e53ae5bd6d36193389e5c0";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="f7ff8132-5732-44d7-8f4c-80b82bdb1771"></script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+  </style>
 </head>
 <body class="antialiased">
 <a href="#main" class="skip-link">Skip to main content</a>
@@ -63,30 +98,30 @@
       <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10">
         <i class="ri-dashboard-3-line text-2xl text-emerald-400"></i>
       </div>
-      <div class="text-xl font-bold text-white brand-title">DevOps Dashboard</div>
+      <div class="text-xl font-bold text-white">DevOps Dashboard</div>
     </div>
-    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" role="navigation" aria-label="Main Navigation">
+    <nav class="hidden md:flex items-center gap-6 text-sm text-slate-300" role="navigation" aria-label="Main navigation">
       <a href="#pain" class="hover:text-emerald-300 transition">Pain Points</a>
       <a href="#features" class="hover:text-emerald-300 transition">Features</a>
-      <a href="#architecture" class="hover:text-emerald-300 transition">Tech</a>
-      <a href="https://devops-dash.junxinzhang.com" class="hover:text-emerald-300 transition">Demo</a>
+      <a href="#architecture" class="hover:text-emerald-300 transition">Tech Stack</a>
+      <a href="#demo" class="hover:text-emerald-300 transition">Demo</a>
       <a href="#faq" class="hover:text-emerald-300 transition">FAQ</a>
-      <a href="../" class="text-slate-400 hover:text-white transition" title="Chinese Version">CN</a>
-      <a href="#contact" class="px-4 py-2 border border-emerald-400 text-emerald-300 rounded-md hover:bg-emerald-500/10 transition">Get Started</a>
+      <a href="../" class="text-slate-400 hover:text-white transition">中文</a>
+      <a href="#contact" class="px-4 py-2 border border-emerald-400 text-emerald-300 rounded-md hover:bg-emerald-500/10 transition">Contact</a>
     </nav>
 
     <button id="menu-btn" class="mobile-menu-btn md:hidden" aria-label="Open navigation menu" aria-expanded="false">
       <i class="ri-menu-line text-xl text-white"></i>
     </button>
 
-    <div id="mobile-nav" class="mobile-nav md:hidden text-slate-300 text-sm" role="navigation" aria-label="Mobile Navigation">
+    <div id="mobile-nav" class="mobile-nav md:hidden text-slate-300 text-sm" role="navigation" aria-label="Mobile navigation">
       <a href="#pain">Pain Points</a>
       <a href="#features">Features</a>
-      <a href="#architecture">Tech</a>
-      <a href="https://devops-dash.junxinzhang.com">Demo</a>
+      <a href="#architecture">Tech Stack</a>
+      <a href="#demo">Demo</a>
       <a href="#faq">FAQ</a>
-      <a href="../">Chinese</a>
-      <a href="#contact" class="text-emerald-300 font-medium">Get Started</a>
+      <a href="../">中文版</a>
+      <a href="#contact" class="text-emerald-300 font-medium">Contact</a>
     </div>
   </div>
 </header>
@@ -96,20 +131,19 @@
   <section class="w-full bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-16 lg:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       <div data-aos="fade-right" class="order-2 lg:order-1">
-        <div class="badge inline-block animate-slide-in">Real-time Monitoring</div>
+        <div class="badge inline-block animate-slide-in">Real-time Monitoring at a Glance</div>
         <h1 class="mt-6 text-3xl sm:text-4xl lg:text-5xl font-extrabold hero-gradient leading-tight">
           Make Your CI/CD Pipeline Transparent
         </h1>
         <p class="mt-6 text-base sm:text-lg text-slate-300 leading-relaxed">
-          Enterprise DevOps visualization platform: real-time build tracking, code quality analysis, deployment monitoring, and big screen display. Keep your team informed at every stage of software delivery.
+          Enterprise DevOps visualization platform: Real-time build status tracking, code quality analysis, deployment monitoring, and big screen display. Keep your team informed of every stage of software delivery.
         </p>
 
         <div class="mt-8 flex flex-col sm:flex-row flex-wrap gap-4">
-          <a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener"
-             class="px-6 py-3 rounded-md bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition text-center">
-             View Live Demo
+          <a href="#demo" class="px-6 py-3 rounded-md bg-emerald-500 text-white shadow-lg hover:bg-emerald-600 transition text-center">
+             View Demo
           </a>
-          <a href="https://github.com/example/devops-dash" target="_blank" rel="noopener"
+          <a href="https://github.com/junxinzhang/devops-dash-landing-page" target="_blank" rel="noopener"
              class="px-6 py-3 rounded-md border border-slate-600 text-slate-200 hover:bg-slate-700/50 transition flex items-center gap-2 justify-center">
              <i class="ri-github-line"></i> View Source
           </a>
@@ -129,8 +163,8 @@
             <div class="text-xs text-slate-400 mt-1">Deployments</div>
           </div>
           <div class="stat-card">
-            <div class="text-2xl font-bold text-amber-400">Big Screen</div>
-            <div class="text-xs text-slate-400 mt-1">TV Display</div>
+            <div class="text-2xl font-bold text-amber-400">TV Ready</div>
+            <div class="text-xs text-slate-400 mt-1">Big Screen</div>
           </div>
         </div>
       </div>
@@ -142,20 +176,8 @@
 
           <div class="screenshot-carousel relative">
             <div class="carousel-wrapper">
-              <img src="../assets/screenshot.png"
-                   alt="DevOps Dashboard - Build Monitoring"
-                   width="900"
-                   height="600"
-                   loading="eager"
-                   fetchpriority="high"
-                   class="carousel-image active relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto"
-                   itemprop="image">
-              <img src="../assets/screenshot01.png"
-                   alt="DevOps Dashboard - Quality Analysis"
-                   width="900"
-                   height="600"
-                   loading="eager"
-                   class="carousel-image relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto">
+              <img src="../assets/screenshot.png" alt="DevOps Dashboard Interface - Build Monitoring" width="900" height="600" loading="eager" fetchpriority="high" class="carousel-image active relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto" itemprop="image">
+              <img src="../assets/screenshot01.png" alt="DevOps Dashboard Interface - Quality Analysis" width="900" height="600" loading="eager" class="carousel-image relative rounded-xl shadow-2xl border border-slate-700 w-full max-w-xl mx-auto">
             </div>
 
             <button class="carousel-btn carousel-prev" aria-label="Previous screenshot">
@@ -177,36 +199,30 @@
 
   <!-- Pain Points Section -->
   <section id="pain" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold text-slate-900 text-center">Common Challenges</h2>
-    <p class="text-slate-600 text-center mt-4 max-w-2xl mx-auto">DevOps teams often face these monitoring and collaboration pain points.</p>
+    <h2 class="text-3xl font-semibold text-slate-900 text-center">Common Challenges You May Face</h2>
+    <p class="text-slate-600 text-center mt-4 max-w-2xl mx-auto">Typical monitoring and collaboration pain points DevOps teams encounter daily.</p>
     <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="card flex items-start gap-4 animate-slide-in">
-        <div class="icon-box bg-amber-50">
-          <i class="ri-eye-off-line text-2xl text-amber-500"></i>
-        </div>
+      <article class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-amber-50"><i class="ri-eye-off-line text-2xl text-amber-500"></i></div>
         <div>
           <h3 class="font-medium text-slate-900">Opaque Build Status</h3>
           <p class="mt-2 text-slate-600 text-sm">Need to log into multiple systems to check build status, unable to quickly understand overall progress.</p>
         </div>
-      </div>
-      <div class="card flex items-start gap-4 animate-slide-in">
-        <div class="icon-box bg-emerald-50">
-          <i class="ri-bug-line text-2xl text-emerald-600"></i>
-        </div>
+      </article>
+      <article class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-emerald-50"><i class="ri-bug-line text-2xl text-emerald-600"></i></div>
         <div>
           <h3 class="font-medium text-slate-900">Scattered Quality Metrics</h3>
           <p class="mt-2 text-slate-600 text-sm">Code quality data scattered across different tools, difficult to view and compare uniformly.</p>
         </div>
-      </div>
-      <div class="card flex items-start gap-4 animate-slide-in">
-        <div class="icon-box bg-rose-50">
-          <i class="ri-team-line text-2xl text-rose-500"></i>
-        </div>
+      </article>
+      <article class="card flex items-start gap-4 animate-slide-in">
+        <div class="icon-box bg-rose-50"><i class="ri-team-line text-2xl text-rose-500"></i></div>
         <div>
-          <h3 class="font-medium text-slate-900">Team Collaboration Issues</h3>
-          <p class="mt-2 text-slate-600 text-sm">Lack of unified visual dashboard, team members cannot quickly sync project status.</p>
+          <h3 class="font-medium text-slate-900">Poor Team Collaboration</h3>
+          <p class="mt-2 text-slate-600 text-sm">Lack of unified visualization dashboard, team members cannot quickly sync project status.</p>
         </div>
-      </div>
+      </article>
     </div>
   </section>
 
@@ -216,45 +232,36 @@
     <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">One-stop DevOps visualization monitoring solution.</p>
     <div class="grid lg:grid-cols-2 gap-8">
       <div class="space-y-6">
-        <div class="card flex items-start gap-4">
-          <div class="icon-box bg-emerald-50">
-            <i class="ri-pulse-line text-2xl text-emerald-600"></i>
-          </div>
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-emerald-50"><i class="ri-pulse-line text-2xl text-emerald-600"></i></div>
           <div>
             <h3 class="font-medium text-slate-900">Real-time Build Monitoring</h3>
             <p class="mt-2 text-slate-600 text-sm">Track real-time status of every CI/CD build, support multi-project parallel monitoring with auto-refresh.</p>
           </div>
-        </div>
-        <div class="card flex items-start gap-4">
-          <div class="icon-box bg-amber-50">
-            <i class="ri-bar-chart-box-line text-2xl text-amber-500"></i>
-          </div>
+        </article>
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-amber-50"><i class="ri-bar-chart-box-line text-2xl text-amber-500"></i></div>
           <div>
             <h3 class="font-medium text-slate-900">Code Quality Analysis</h3>
-            <p class="mt-2 text-slate-600 text-sm">Integrate with SonarQube and similar tools to display coverage, bugs, code smells, and other key metrics.</p>
+            <p class="mt-2 text-slate-600 text-sm">Integrated with SonarQube and other tools, displaying code coverage, bug count, code smell and key metrics.</p>
           </div>
-        </div>
+        </article>
       </div>
-
       <div class="space-y-6">
-        <div class="card flex items-start gap-4">
-          <div class="icon-box bg-cyan-50">
-            <i class="ri-rocket-2-line text-2xl text-cyan-600"></i>
-          </div>
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-cyan-50"><i class="ri-rocket-2-line text-2xl text-cyan-600"></i></div>
           <div>
             <h3 class="font-medium text-slate-900">Deployment Tracking</h3>
-            <p class="mt-2 text-slate-600 text-sm">Record detailed information for every deployment including time, status, environment, version, and complete history.</p>
+            <p class="mt-2 text-slate-600 text-sm">Record detailed deployment information including time, status, environment, version and complete history.</p>
           </div>
-        </div>
-        <div class="card flex items-start gap-4">
-          <div class="icon-box bg-slate-100">
-            <i class="ri-tv-2-line text-2xl text-slate-600"></i>
-          </div>
+        </article>
+        <article class="card flex items-start gap-4">
+          <div class="icon-box bg-slate-100"><i class="ri-tv-2-line text-2xl text-slate-600"></i></div>
           <div>
             <h3 class="font-medium text-slate-900">Big Screen Display</h3>
-            <p class="mt-2 text-slate-600 text-sm">TV big screen compatible, auto-scaling layout, real-time data refresh, perfect for team area display.</p>
+            <p class="mt-2 text-slate-600 text-sm">TV big screen optimized, auto-scaling layout, real-time data refresh, perfect for team area display.</p>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -265,42 +272,30 @@
     <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Modern frontend tech stack with cloud-native deployment.</p>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="arch-card">
+      <article class="arch-card">
         <div class="arch-step">1</div>
         <h4 class="font-medium text-slate-900 mt-4">React + Vite</h4>
-        <p class="mt-2 text-slate-600 text-sm">Built with React 18, Vite for fast dev experience, modern component architecture.</p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-          <i class="ri-reactjs-line"></i>
-          <span>Component-based</span>
-        </div>
-      </div>
-      <div class="arch-card">
+        <p class="mt-2 text-slate-600 text-sm">Built on React 18, Vite for fast development, modern component architecture.</p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500"><i class="ri-reactjs-line"></i><span>Component-based</span></div>
+      </article>
+      <article class="arch-card">
         <div class="arch-step">2</div>
         <h4 class="font-medium text-slate-900 mt-4">ECharts Visualization</h4>
         <p class="mt-2 text-slate-600 text-sm">Powerful data visualization capabilities, supporting various charts with real-time updates.</p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-          <i class="ri-line-chart-line"></i>
-          <span>Rich Charts</span>
-        </div>
-      </div>
-      <div class="arch-card">
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500"><i class="ri-line-chart-line"></i><span>Rich Charts</span></div>
+      </article>
+      <article class="arch-card">
         <div class="arch-step">3</div>
-        <h4 class="font-medium text-slate-900 mt-4">Redux State</h4>
+        <h4 class="font-medium text-slate-900 mt-4">Redux State Management</h4>
         <p class="mt-2 text-slate-600 text-sm">Redux Toolkit for global state management, clear and controllable data flow.</p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-          <i class="ri-database-2-line"></i>
-          <span>Centralized State</span>
-        </div>
-      </div>
-      <div class="arch-card">
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500"><i class="ri-database-2-line"></i><span>Centralized State</span></div>
+      </article>
+      <article class="arch-card">
         <div class="arch-step">4</div>
         <h4 class="font-medium text-slate-900 mt-4">AWS Deployment</h4>
         <p class="mt-2 text-slate-600 text-sm">CodeBuild + CodeDeploy automated deployment, cloud-native architecture.</p>
-        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500">
-          <i class="ri-cloud-line"></i>
-          <span>Automated CI/CD</span>
-        </div>
-      </div>
+        <div class="mt-4 flex items-center gap-2 text-xs text-slate-500"><i class="ri-cloud-line"></i><span>Automated CI/CD</span></div>
+      </article>
     </div>
   </section>
 
@@ -309,137 +304,94 @@
     <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">Quick Start</h2>
     <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Multiple ways to quickly explore DevOps Dashboard.</p>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="demo-card">
-        <div class="flex items-center gap-3 mb-4">
-          <i class="ri-play-circle-line text-3xl text-emerald-500"></i>
-          <span class="text-slate-700 font-medium">Live Demo</span>
-        </div>
-        <p class="text-slate-600 text-sm mb-4">Access the online demo directly to experience full features.</p>
-        <a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition">
-          <i class="ri-external-link-line"></i> Visit Demo
-        </a>
-      </div>
-      <div class="demo-card">
-        <div class="flex items-center gap-3 mb-4">
-          <i class="ri-git-repository-line text-3xl text-amber-500"></i>
-          <span class="text-slate-700 font-medium">Source Code</span>
-        </div>
-        <p class="text-slate-600 text-sm mb-4">View complete source code and implementation details.</p>
-        <a href="https://github.com/example/devops-dash" target="_blank" rel="noopener"
-           class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition">
-          <i class="ri-code-s-slash-line"></i> View Code
-        </a>
-      </div>
-      <div class="demo-card">
-        <div class="flex items-center gap-3 mb-4">
-          <i class="ri-book-open-line text-3xl text-slate-800"></i>
-          <span class="text-slate-700 font-medium">Documentation</span>
-        </div>
-        <p class="text-slate-600 text-sm mb-4">Complete deployment and usage documentation guide.</p>
-        <a href="#contact"
-           class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition">
-          <i class="ri-file-text-line"></i> View Docs
-        </a>
+    <!-- Screenshot Preview -->
+    <div class="mb-12">
+      <div class="relative max-w-4xl mx-auto">
+        <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 via-amber-400/20 to-cyan-400/20 rounded-2xl blur-xl"></div>
+        <img src="../assets/screenshot.png" alt="DevOps Dashboard Interface Preview" class="relative rounded-xl shadow-2xl border border-slate-200 w-full" loading="lazy" />
       </div>
     </div>
 
+    <div class="grid md:grid-cols-3 gap-8">
+      <article class="demo-card">
+        <div class="flex items-center gap-3 mb-4"><i class="ri-play-circle-line text-3xl text-emerald-500"></i><span class="text-slate-700 font-medium">Online Demo</span></div>
+        <p class="text-slate-600 text-sm mb-4">Direct access to online demo to experience full features.</p>
+        <a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-md hover:bg-emerald-600 transition"><i class="ri-external-link-line"></i> Visit Demo</a>
+      </article>
+      <article class="demo-card">
+        <div class="flex items-center gap-3 mb-4"><i class="ri-git-repository-line text-3xl text-amber-500"></i><span class="text-slate-700 font-medium">Source Code</span></div>
+        <p class="text-slate-600 text-sm mb-4">View complete source code and implementation details.</p>
+        <a href="https://github.com/junxinzhang/devops-dash-landing-page" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-amber-500 text-white rounded-md hover:bg-amber-600 transition"><i class="ri-code-s-slash-line"></i> View Source</a>
+      </article>
+      <article class="demo-card">
+        <div class="flex items-center gap-3 mb-4"><i class="ri-book-open-line text-3xl text-slate-800"></i><span class="text-slate-700 font-medium">Documentation</span></div>
+        <p class="text-slate-600 text-sm mb-4">Complete deployment and usage documentation guide.</p>
+        <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-md hover:bg-slate-800 transition"><i class="ri-file-text-line"></i> View Docs</a>
+      </article>
+    </div>
+
     <div class="mt-12 grid lg:grid-cols-3 gap-6">
-      <div class="dashboard-feature-card">
-        <div class="flex items-center gap-3 mb-3">
-          <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-slate-700 font-medium">Real-time Updates</span>
-        </div>
-        <p class="text-slate-600 text-sm">Data auto-refreshes every 5 minutes, keeping status current.</p>
-      </div>
-      <div class="dashboard-feature-card">
-        <div class="flex items-center gap-3 mb-3">
-          <i class="ri-fullscreen-line text-xl text-amber-500"></i>
-          <span class="text-slate-700 font-medium">Adaptive Layout</span>
-        </div>
+      <article class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3"><span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span><span class="text-slate-700 font-medium">Real-time Updates</span></div>
+        <p class="text-slate-600 text-sm">Data auto-refreshes every 5 minutes, keeping the latest status.</p>
+      </article>
+      <article class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3"><i class="ri-fullscreen-line text-xl text-amber-500"></i><span class="text-slate-700 font-medium">Responsive Layout</span></div>
         <p class="text-slate-600 text-sm">Supports all screen sizes, from mobile to big screen TV.</p>
-      </div>
-      <div class="dashboard-feature-card">
-        <div class="flex items-center gap-3 mb-3">
-          <i class="ri-lock-line text-xl text-emerald-500"></i>
-          <span class="text-slate-700 font-medium">Secure Auth</span>
-        </div>
-        <p class="text-slate-600 text-sm">Integrated with Authing authentication, supports enterprise SSO.</p>
-      </div>
+      </article>
+      <article class="dashboard-feature-card">
+        <div class="flex items-center gap-3 mb-3"><i class="ri-lock-line text-xl text-emerald-500"></i><span class="text-slate-700 font-medium">Secure Authentication</span></div>
+        <p class="text-slate-600 text-sm">Integrated Authing authentication, supporting enterprise SSO login.</p>
+      </article>
     </div>
   </section>
 
   <!-- Tech Stack Section -->
   <section class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up">
-    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-10">Tech Stack</h2>
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-10">Technology Stack</h2>
     <div class="flex flex-wrap justify-center gap-6">
-      <div class="tech-badge">
-        <i class="ri-reactjs-line text-cyan-600"></i>
-        <span>React 18</span>
-      </div>
-      <div class="tech-badge">
-        <i class="ri-flashlight-line text-amber-600"></i>
-        <span>Vite</span>
-      </div>
-      <div class="tech-badge">
-        <i class="ri-database-2-line text-emerald-600"></i>
-        <span>Redux Toolkit</span>
-      </div>
-      <div class="tech-badge">
-        <i class="ri-line-chart-line text-slate-700"></i>
-        <span>ECharts</span>
-      </div>
-      <div class="tech-badge">
-        <i class="ri-layout-3-line text-cyan-500"></i>
-        <span>Ant Design</span>
-      </div>
-      <div class="tech-badge">
-        <i class="ri-cloud-line text-amber-500"></i>
-        <span>AWS</span>
-      </div>
+      <div class="tech-badge"><i class="ri-reactjs-line text-cyan-600"></i><span>React 18</span></div>
+      <div class="tech-badge"><i class="ri-flashlight-line text-amber-600"></i><span>Vite</span></div>
+      <div class="tech-badge"><i class="ri-database-2-line text-emerald-600"></i><span>Redux Toolkit</span></div>
+      <div class="tech-badge"><i class="ri-line-chart-line text-slate-700"></i><span>ECharts</span></div>
+      <div class="tech-badge"><i class="ri-layout-3-line text-cyan-500"></i><span>Ant Design</span></div>
+      <div class="tech-badge"><i class="ri-cloud-line text-amber-500"></i><span>AWS</span></div>
     </div>
   </section>
 
   <!-- FAQ Section -->
   <section id="faq" class="max-w-7xl mx-auto px-6 py-16" data-aos="fade-up" itemscope itemtype="https://schema.org/FAQPage">
-    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">FAQ</h2>
+    <h2 class="text-3xl font-semibold text-slate-900 text-center mb-4">Frequently Asked Questions</h2>
     <p class="text-slate-600 text-center mb-10 max-w-2xl mx-auto">Common questions about DevOps Dashboard.</p>
 
     <div class="max-w-3xl mx-auto space-y-4">
       <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" open>
         <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
-          <span itemprop="name" class="font-medium text-slate-900">Which CI/CD tools are supported?</span>
+          <span itemprop="name" class="font-medium text-slate-900">What CI/CD tools are supported?</span>
           <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
         </summary>
         <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
-            Native support for AWS CodeBuild and CodeDeploy, can also integrate with Jenkins, GitLab CI, GitHub Actions and other mainstream CI/CD tools via API.
-          </div>
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">Currently native support for AWS CodeBuild and CodeDeploy, with API integration available for Jenkins, GitLab CI, GitHub Actions and other mainstream CI/CD tools.</div>
         </div>
       </details>
 
       <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
-          <span itemprop="name" class="font-medium text-slate-900">Is big screen display supported?</span>
+          <span itemprop="name" class="font-medium text-slate-900">Does it support big screen display?</span>
           <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
         </summary>
         <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
-            Yes. Dashboard uses autofit.js specifically designed for big screen display, supports auto-adaptation to different resolutions, provides real-time refreshing visual dashboard.
-          </div>
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">Yes. The Dashboard uses autofit.js designed specifically for big screen display, supports auto-adapting to different resolutions, providing real-time refreshing visualization dashboard.</div>
         </div>
       </details>
 
       <details class="faq-item group" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
         <summary class="faq-question cursor-pointer list-none flex items-center justify-between p-4 bg-white rounded-lg border border-slate-200 hover:border-emerald-300 transition">
-          <span itemprop="name" class="font-medium text-slate-900">What is the data refresh rate?</span>
+          <span itemprop="name" class="font-medium text-slate-900">What is the data refresh frequency?</span>
           <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
         </summary>
         <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
-            Default auto-refresh every 5 minutes to ensure displayed information is always current. Refresh rate can be configured based on requirements.
-          </div>
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">Default auto-refresh every 5 minutes, ensuring displayed information is always up to date. Refresh frequency can be configured as needed.</div>
         </div>
       </details>
 
@@ -449,9 +401,7 @@
           <i class="ri-arrow-down-s-line text-xl text-slate-400 group-open:rotate-180 transition-transform"></i>
         </summary>
         <div class="faq-answer p-4 bg-slate-50 rounded-b-lg border-x border-b border-slate-200" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">
-            Project is built with Vite, supports AWS CodeBuild + CodeDeploy automated deployment, can also deploy to any platform supporting static sites like Nginx, S3, etc.
-          </div>
+          <div itemprop="text" class="text-slate-600 text-sm leading-relaxed">Built with Vite, supports AWS CodeBuild + CodeDeploy automated deployment, can also be deployed to any static site platform like Nginx, S3, etc.</div>
         </div>
       </details>
     </div>
@@ -460,16 +410,10 @@
   <!-- Contact Section -->
   <section id="contact" class="max-w-7xl mx-auto px-6 py-16 bg-gradient-to-r from-emerald-600 to-cyan-500 rounded-2xl text-center" data-aos="fade-up">
     <h2 class="text-3xl font-semibold text-white mb-6">Get Started with DevOps Dashboard</h2>
-    <p class="text-emerald-50 mb-8 max-w-xl mx-auto">Experience enterprise-grade CI/CD visualization monitoring platform to improve team collaboration efficiency.</p>
+    <p class="text-emerald-50 mb-8 max-w-xl mx-auto">Experience enterprise-grade CI/CD visualization platform and boost your team collaboration efficiency.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="mailto:jason2023zhang@gmail.com"
-         class="px-8 py-4 bg-white text-emerald-600 rounded-md text-lg shadow-lg hover:bg-slate-50 transition inline-flex items-center justify-center gap-2">
-        <i class="ri-mail-line"></i> Email Contact
-      </a>
-      <a href="https://junxinzhang.com" target="_blank" rel="noopener"
-         class="px-8 py-4 border-2 border-white text-white rounded-md text-lg hover:bg-white/10 transition inline-flex items-center justify-center gap-2">
-        <i class="ri-earth-line"></i> Visit Blog
-      </a>
+      <a href="mailto:jason2023zhang@gmail.com" class="px-8 py-4 bg-white text-emerald-600 rounded-md text-lg shadow-lg hover:bg-slate-50 transition inline-flex items-center justify-center gap-2"><i class="ri-mail-line"></i> Email Consultation</a>
+      <a href="https://junxinzhang.com" target="_blank" rel="noopener" class="px-8 py-4 border-2 border-white text-white rounded-md text-lg hover:bg-white/10 transition inline-flex items-center justify-center gap-2"><i class="ri-earth-line"></i> Visit Blog</a>
     </div>
     <div class="mt-6 text-sm text-emerald-50/90">WeChat: winnielove2020</div>
   </section>
@@ -479,18 +423,15 @@
   <div class="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-slate-400">
     <div>
       <div class="flex items-center gap-2 mb-4">
-        <div class="flex gap-1">
-          <span class="w-3 h-3 rounded-sm bg-emerald-400"></span>
-          <span class="w-3 h-3 rounded-sm bg-cyan-400"></span>
-        </div>
+        <div class="flex gap-1"><span class="w-3 h-3 rounded-sm bg-emerald-400"></span><span class="w-3 h-3 rounded-sm bg-cyan-400"></span></div>
         <span class="text-white font-semibold">DevOps Dashboard</span>
       </div>
-      <p class="text-sm">Enterprise CI/CD visualization platform that makes DevOps transparent.</p>
+      <p class="text-sm">Enterprise CI/CD visualization platform, making DevOps processes transparent and visible.</p>
     </div>
     <div>
-      <h3 class="font-semibold text-white mb-4">Features</h3>
+      <h3 class="font-semibold text-white mb-4">Core Features</h3>
       <ul class="space-y-2 text-sm">
-        <li>Real-time Monitoring</li>
+        <li>Real-time Build Monitoring</li>
         <li>Code Quality Analysis</li>
         <li>Deployment Tracking</li>
         <li>Big Screen Display</li>
@@ -499,43 +440,23 @@
     <div>
       <h3 class="font-semibold text-white mb-4">Resources</h3>
       <ul class="space-y-3 text-sm">
-        <li class="flex items-center gap-2">
-          <i class="ri-external-link-line text-emerald-300"></i>
-          <a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener" class="hover:text-emerald-300 transition">Live Demo</a>
-        </li>
-        <li class="flex items-center gap-2">
-          <i class="ri-git-repository-line text-emerald-300"></i>
-          <a href="https://github.com/example/devops-dash" target="_blank" rel="noopener" class="hover:text-emerald-300 transition">Source Code</a>
-        </li>
+        <li class="flex items-center gap-2"><i class="ri-external-link-line text-emerald-300"></i><a href="https://devops-dash.junxinzhang.com" target="_blank" rel="noopener" class="hover:text-emerald-300 transition">Online Demo</a></li>
+        <li class="flex items-center gap-2"><i class="ri-git-repository-line text-emerald-300"></i><a href="https://github.com/junxinzhang/devops-dash-landing-page" target="_blank" rel="noopener" class="hover:text-emerald-300 transition">Source Code</a></li>
       </ul>
     </div>
     <div>
-      <h3 class="font-semibold text-white mb-4">Follow Us</h3>
+      <h3 class="font-semibold text-white mb-4">Connect</h3>
       <div class="flex items-center gap-4 text-2xl mb-4">
-        <a href="https://github.com/junxinzhang" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="GitHub">
-          <i class="ri-github-fill"></i>
-        </a>
-        <a href="https://junxinzhang.com" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="Blog">
-          <i class="ri-earth-line"></i>
-        </a>
-        <a href="mailto:jason2023zhang@gmail.com" class="hover:text-emerald-300 transition" title="Email">
-          <i class="ri-mail-line"></i>
-        </a>
-        <a href="https://x.com/Jasonz9788" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="Twitter/X">
-          <i class="ri-twitter-x-line"></i>
-        </a>
-        <div class="group relative">
-          <i class="ri-wechat-line hover:text-emerald-300 cursor-pointer" title="WeChat"></i>
-          <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 w-32 bg-white border border-gray-200 rounded-lg p-2 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
-            <p class="text-xs text-center text-slate-600">WeChat: winnielove2020</p>
-          </div>
-        </div>
+        <a href="https://github.com/junxinzhang" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="GitHub"><i class="ri-github-fill"></i></a>
+        <a href="https://junxinzhang.com" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="Blog"><i class="ri-earth-line"></i></a>
+        <a href="mailto:jason2023zhang@gmail.com" class="hover:text-emerald-300 transition" title="Email"><i class="ri-mail-line"></i></a>
+        <a href="https://x.com/Jasonz9788" target="_blank" rel="noopener" class="hover:text-emerald-300 transition" title="Twitter/X"><i class="ri-twitter-x-line"></i></a>
       </div>
-      <p class="text-xs text-slate-500">Feel free to reach out</p>
+      <p class="text-xs text-slate-500">Feel free to reach out for tech discussions</p>
     </div>
   </div>
   <div class="text-center text-sm text-slate-600 py-4 border-t border-slate-800">
-    &copy; <span id="copyright-year">2025</span> Jason Zhang. DevOps Dashboard.
+    &copy; <span id="copyright-year">2025-2026</span> Jason Zhang. DevOps Dashboard.
   </div>
 </footer>
 
